@@ -100,7 +100,7 @@ function configure_cinder_backend_vmax {
     echo "</EMC>" >> ${CINDER_CONF_DIR}/cinder_dell_emc_config_${be_name}.xml
     if [ ! -f "$CINDER_CONF_DIR/cinder_emc_config.xml" ]; then
         ln -s ${CINDER_CONF_DIR}/cinder_dell_emc_config_${be_name}.xml \
-            ${CINDER_CONF_DIR}/cinder_emc_config.xml
+            ${CINDER_CONF_DIR}/cinder_dell_emc_config.xml
     fi
 }
 
