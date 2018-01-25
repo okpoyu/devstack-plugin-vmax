@@ -62,6 +62,7 @@ function configure_port_groups {
 
 function configure_single_pool {
     local be_name=$1
+    configure_port_groups ${be_name}
     for val in "SSLVerify"  "Array" "SRP" "RestPassword" "RestUserName"\
     "RestServerPort" "RestServerIp" ; do
         vmax_temp="${be_name}_${val}"
@@ -88,7 +89,6 @@ function configure_single_pool {
             fi
         fi
     done
-    configure_port_groups ${be_name}
 }
 
 function configure_cinder_backend_vmax {
